@@ -1,0 +1,33 @@
+@model Noksan_Music_Web.Models.Mesaj
+
+@{
+    ViewData["Title"] = "Mesaj Gönder";
+}
+
+@* <h1>Mesaj Gönder</h1> *@
+
+@if (ViewBag.Basarili != null)
+{
+    <div class="alert alert-success">@ViewBag.Basarili</div>
+}
+
+@if (ViewBag.Hata != null)
+{
+    <div class="alert alert-danger">@ViewBag.Hata</div>
+}
+
+@* <form asp-action="SubmitMesaj" method="post">
+    <div class="form-group">
+        <label for="AdSoyad">Ad Soyad</label>
+        <input type="text" class="form-control" id="AdSoyad" name="AdSoyad" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+    <div class="form-group">
+        <label for="MesajMetni">Mesaj</label>
+        <textarea class="form-control" id="Icerik" name="MesajMetni" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gönder</button>
+</form> *@

@@ -1,0 +1,125 @@
+@model IEnumerable<Noksan_Music_Web.Models.Mesaj>
+
+@{
+    ViewData["Title"] = "Yönetim Paneli";
+}
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+      }
+
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #customers td,
+      #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #customers tr:hover {
+        background-color: #ddd;
+      }
+
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04aa6d;
+        color: white;
+      }
+
+
+      .logout-btn{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .btn {
+        background-color: rgb(177, 0, 0);
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.9;
+      }
+
+      .btn:hover {
+        background-color: rgb(150, 0, 0);
+      }
+    </style>
+</head>
+<body>
+    <h1>İletişim Mesajları</h1>
+
+    <table id="customers">
+      <tr>
+        <th>Ad Soyad</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+      </tr>
+
+        @foreach (var mesaj in ViewBag.Mesajlar)
+        {
+            <tr>
+                <td>@mesaj.AdSoyad</td>
+                <td>@mesaj.Telefon</td>
+                <td>@mesaj.Email</td>
+                <td>@mesaj.Konu</td>
+                <td>@mesaj.MesajMetni</td>
+            </tr>
+        }
+    </table>
+    <div class="logout-btn">
+        <a href="@Url.Action("Logout", "Home")" class="btn">Çıkış Yap</a>
+    </div>
+</body>
+</html>
+
+@* <h1>İletişim Mesajları</h1>
+<table id="customers">
+    <tr>
+        <th>Ad Soyad</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+    </tr>
+    @foreach (var mesaj in ViewBag.Mesajlar)
+    {
+        <tr>
+            <td>@mesaj.AdSoyad</td>
+            <td>@mesaj.Telefon</td>
+            <td>@mesaj.Email</td>
+            <td>@mesaj.Konu</td>
+            <td>@mesaj.MesajMetni</td>
+        </tr>
+    }
+</table>
+
+<a href="@Url.Action("Logout", "Home")" class="btn">Çıkış Yap</a> *@
